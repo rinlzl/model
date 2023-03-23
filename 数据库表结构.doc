@@ -1,0 +1,515 @@
+
+<html xmlns:o="urn:schemas-microsoft-com:office:office"
+      xmlns:w="urn:schemas-microsoft-com:office:word"
+      xmlns="http://www.w3.org/TR/REC-html40">
+<!--<html>-->
+<h3>&nbsp;
+    创建外键索引语句:
+</h3>
+
+<pre style="padding: 20px; display: block; background: #d5d5d5;font-size: 12px">
+;
+ALTER TABLE zhaji ADD FOREIGN KEY (quyu) REFERENCES quyu(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE kaiguanji ADD FOREIGN KEY (zhajiid) REFERENCES zhaji(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE kaiguanji ADD FOREIGN KEY (quyu) REFERENCES quyu(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE dengji ADD FOREIGN KEY (zhajiid) REFERENCES zhaji(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE dengji ADD FOREIGN KEY (quyu) REFERENCES quyu(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE dengji ADD FOREIGN KEY (gerenxinxi) REFERENCES yonghu(id) ON UPDATE CASCADE ON DELETE CASCADE</pre>
+<p>&nbsp;</p>
+<table width=600 cellpadding="6" cellspacing="1" style="margin: 0 auto">
+    <tbody>
+    <tr>
+        <td colspan="6" bgcolor="#DEDEDE">
+            【管理员】模块,表名：<span style="color: #990000">admins</span>
+        </td>
+    </tr>
+    <tr>
+        <td>序号</td>
+        <td>字段名</td>
+        <td>类型</td>
+        <td>长度</td>
+        <td>主键</td>
+        <td>描述</td>
+    </tr>
+        <tr>
+        <td>1</td>
+        <td>id</td>
+        <td>int</td>
+        <td></td>
+        <td>是</td>
+        <td> (主键)</td>
+    </tr>
+        <tr>
+        <td>2</td>
+        <td>username</td>
+        <td>varchar</td>
+        <td>50</td>
+        <td></td>
+        <td>帐号 </td>
+    </tr>
+        <tr>
+        <td>3</td>
+        <td>pwd</td>
+        <td>varchar</td>
+        <td>50</td>
+        <td></td>
+        <td>密码 </td>
+    </tr>
+    
+                    </tbody>
+</table>
+<p>&nbsp;</p>
+<table width=600 cellpadding="6" cellspacing="1" style="margin: 0 auto">
+    <tbody>
+    <tr>
+        <td colspan="6" bgcolor="#DEDEDE">
+            【用户】模块,表名：<span style="color: #990000">yonghu</span>
+        </td>
+    </tr>
+    <tr>
+        <td>序号</td>
+        <td>字段名</td>
+        <td>类型</td>
+        <td>长度</td>
+        <td>主键</td>
+        <td>描述</td>
+    </tr>
+        <tr>
+        <td>1</td>
+        <td>id</td>
+        <td>int</td>
+        <td></td>
+        <td>是</td>
+        <td> (主键)</td>
+    </tr>
+        <tr>
+        <td>2</td>
+        <td>yonghuming</td>
+        <td>varchar</td>
+        <td>50</td>
+        <td></td>
+        <td>用户名 </td>
+    </tr>
+        <tr>
+        <td>3</td>
+        <td>mima</td>
+        <td>varchar</td>
+        <td>50</td>
+        <td></td>
+        <td>密码 </td>
+    </tr>
+        <tr>
+        <td>4</td>
+        <td>xingming</td>
+        <td>varchar</td>
+        <td>50</td>
+        <td></td>
+        <td>姓名 </td>
+    </tr>
+        <tr>
+        <td>5</td>
+        <td>xingbie</td>
+        <td>varchar</td>
+        <td>10</td>
+        <td></td>
+        <td>性别 </td>
+    </tr>
+        <tr>
+        <td>6</td>
+        <td>shouji</td>
+        <td>varchar</td>
+        <td>50</td>
+        <td></td>
+        <td>手机 </td>
+    </tr>
+        <tr>
+        <td>7</td>
+        <td>youxiang</td>
+        <td>varchar</td>
+        <td>50</td>
+        <td></td>
+        <td>邮箱 </td>
+    </tr>
+        <tr>
+        <td>8</td>
+        <td>shenfenzheng</td>
+        <td>varchar</td>
+        <td>50</td>
+        <td></td>
+        <td>身份证 </td>
+    </tr>
+        <tr>
+        <td>9</td>
+        <td>zhaopian</td>
+        <td>varchar</td>
+        <td>255</td>
+        <td></td>
+        <td>照片 </td>
+    </tr>
+    
+                    </tbody>
+</table>
+<p>&nbsp;</p>
+<table width=600 cellpadding="6" cellspacing="1" style="margin: 0 auto">
+    <tbody>
+    <tr>
+        <td colspan="6" bgcolor="#DEDEDE">
+            【区域】模块,表名：<span style="color: #990000">quyu</span>
+        </td>
+    </tr>
+    <tr>
+        <td>序号</td>
+        <td>字段名</td>
+        <td>类型</td>
+        <td>长度</td>
+        <td>主键</td>
+        <td>描述</td>
+    </tr>
+        <tr>
+        <td>1</td>
+        <td>id</td>
+        <td>int</td>
+        <td></td>
+        <td>是</td>
+        <td> (主键)</td>
+    </tr>
+        <tr>
+        <td>2</td>
+        <td>quyuming</td>
+        <td>varchar</td>
+        <td>50</td>
+        <td></td>
+        <td>区域名 </td>
+    </tr>
+    
+                    </tbody>
+</table>
+<p>&nbsp;</p>
+<table width=600 cellpadding="6" cellspacing="1" style="margin: 0 auto">
+    <tbody>
+    <tr>
+        <td colspan="6" bgcolor="#DEDEDE">
+            【闸机】模块,表名：<span style="color: #990000">zhaji</span>
+        </td>
+    </tr>
+    <tr>
+        <td>序号</td>
+        <td>字段名</td>
+        <td>类型</td>
+        <td>长度</td>
+        <td>主键</td>
+        <td>描述</td>
+    </tr>
+        <tr>
+        <td>1</td>
+        <td>id</td>
+        <td>int</td>
+        <td></td>
+        <td>是</td>
+        <td> (主键)</td>
+    </tr>
+        <tr>
+        <td>2</td>
+        <td>jiqihao</td>
+        <td>varchar</td>
+        <td>50</td>
+        <td></td>
+        <td>机器号 </td>
+    </tr>
+        <tr>
+        <td>3</td>
+        <td>mingcheng</td>
+        <td>varchar</td>
+        <td>255</td>
+        <td></td>
+        <td>名称 </td>
+    </tr>
+        <tr>
+        <td>4</td>
+        <td>tupian</td>
+        <td>varchar</td>
+        <td>255</td>
+        <td></td>
+        <td>图片 </td>
+    </tr>
+        <tr>
+        <td>5</td>
+        <td>quyu</td>
+        <td>int</td>
+        <td></td>
+        <td></td>
+        <td>区域 </td>
+    </tr>
+        <tr>
+        <td>6</td>
+        <td>zhuangtai</td>
+        <td>varchar</td>
+        <td>50</td>
+        <td></td>
+        <td>状态 </td>
+    </tr>
+        <tr>
+        <td>7</td>
+        <td>xiangxi</td>
+        <td>text</td>
+        <td></td>
+        <td></td>
+        <td>详细 </td>
+    </tr>
+    
+                                <tr>
+            <td colspan="6">
+                设置索引，
+                字段：quyu ，
+                关联表【quyu】中的id 字段            </td>
+        </tr>
+                </tbody>
+</table>
+<p>&nbsp;</p>
+<table width=600 cellpadding="6" cellspacing="1" style="margin: 0 auto">
+    <tbody>
+    <tr>
+        <td colspan="6" bgcolor="#DEDEDE">
+            【开关机】模块,表名：<span style="color: #990000">kaiguanji</span>
+        </td>
+    </tr>
+    <tr>
+        <td>序号</td>
+        <td>字段名</td>
+        <td>类型</td>
+        <td>长度</td>
+        <td>主键</td>
+        <td>描述</td>
+    </tr>
+        <tr>
+        <td>1</td>
+        <td>id</td>
+        <td>int</td>
+        <td></td>
+        <td>是</td>
+        <td> (主键)</td>
+    </tr>
+        <tr>
+        <td>2</td>
+        <td>zhajiid</td>
+        <td>int</td>
+        <td></td>
+        <td></td>
+        <td>闸机id </td>
+    </tr>
+        <tr>
+        <td>3</td>
+        <td>jiqihao</td>
+        <td>varchar</td>
+        <td>50</td>
+        <td></td>
+        <td>机器号 </td>
+    </tr>
+        <tr>
+        <td>4</td>
+        <td>mingcheng</td>
+        <td>varchar</td>
+        <td>255</td>
+        <td></td>
+        <td>名称 </td>
+    </tr>
+        <tr>
+        <td>5</td>
+        <td>tupian</td>
+        <td>varchar</td>
+        <td>255</td>
+        <td></td>
+        <td>图片 </td>
+    </tr>
+        <tr>
+        <td>6</td>
+        <td>quyu</td>
+        <td>int</td>
+        <td></td>
+        <td></td>
+        <td>区域 </td>
+    </tr>
+        <tr>
+        <td>7</td>
+        <td>caozuo</td>
+        <td>varchar</td>
+        <td>50</td>
+        <td></td>
+        <td>操作 </td>
+    </tr>
+        <tr>
+        <td>8</td>
+        <td>beizhu</td>
+        <td>text</td>
+        <td></td>
+        <td></td>
+        <td>备注 </td>
+    </tr>
+        <tr>
+        <td>9</td>
+        <td>addtime</td>
+        <td>timestamp </td>
+        <td></td>
+        <td></td>
+        <td>操作时间 </td>
+    </tr>
+    
+                                <tr>
+            <td colspan="6">
+                设置索引，
+                字段：zhajiid ，
+                关联表【zhaji】中字段id            </td>
+        </tr>
+                            <tr>
+            <td colspan="6">
+                设置索引，
+                字段：quyu ，
+                关联表【quyu】中的id 字段            </td>
+        </tr>
+                </tbody>
+</table>
+<p>&nbsp;</p>
+<table width=600 cellpadding="6" cellspacing="1" style="margin: 0 auto">
+    <tbody>
+    <tr>
+        <td colspan="6" bgcolor="#DEDEDE">
+            【登记】模块,表名：<span style="color: #990000">dengji</span>
+        </td>
+    </tr>
+    <tr>
+        <td>序号</td>
+        <td>字段名</td>
+        <td>类型</td>
+        <td>长度</td>
+        <td>主键</td>
+        <td>描述</td>
+    </tr>
+        <tr>
+        <td>1</td>
+        <td>id</td>
+        <td>int</td>
+        <td></td>
+        <td>是</td>
+        <td> (主键)</td>
+    </tr>
+        <tr>
+        <td>2</td>
+        <td>zhajiid</td>
+        <td>int</td>
+        <td></td>
+        <td></td>
+        <td>闸机id </td>
+    </tr>
+        <tr>
+        <td>3</td>
+        <td>jiqihao</td>
+        <td>varchar</td>
+        <td>50</td>
+        <td></td>
+        <td>机器号 </td>
+    </tr>
+        <tr>
+        <td>4</td>
+        <td>mingcheng</td>
+        <td>varchar</td>
+        <td>255</td>
+        <td></td>
+        <td>名称 </td>
+    </tr>
+        <tr>
+        <td>5</td>
+        <td>tupian</td>
+        <td>varchar</td>
+        <td>255</td>
+        <td></td>
+        <td>图片 </td>
+    </tr>
+        <tr>
+        <td>6</td>
+        <td>quyu</td>
+        <td>int</td>
+        <td></td>
+        <td></td>
+        <td>区域 </td>
+    </tr>
+        <tr>
+        <td>7</td>
+        <td>dengji</td>
+        <td>varchar</td>
+        <td>50</td>
+        <td></td>
+        <td>登记 </td>
+    </tr>
+        <tr>
+        <td>8</td>
+        <td>gerenxinxi</td>
+        <td>int</td>
+        <td></td>
+        <td></td>
+        <td>个人信息ID </td>
+    </tr>
+        <tr>
+        <td>9</td>
+        <td>yonghuming</td>
+        <td>varchar</td>
+        <td>50</td>
+        <td></td>
+        <td>用户名 </td>
+    </tr>
+        <tr>
+        <td>10</td>
+        <td>xingming</td>
+        <td>varchar</td>
+        <td>50</td>
+        <td></td>
+        <td>姓名 </td>
+    </tr>
+        <tr>
+        <td>11</td>
+        <td>shouji</td>
+        <td>varchar</td>
+        <td>50</td>
+        <td></td>
+        <td>手机 </td>
+    </tr>
+        <tr>
+        <td>12</td>
+        <td>zhaopian</td>
+        <td>varchar</td>
+        <td>255</td>
+        <td></td>
+        <td>照片 </td>
+    </tr>
+        <tr>
+        <td>13</td>
+        <td>addtime</td>
+        <td>timestamp </td>
+        <td></td>
+        <td></td>
+        <td>登记时间 </td>
+    </tr>
+    
+                                <tr>
+            <td colspan="6">
+                设置索引，
+                字段：zhajiid ，
+                关联表【zhaji】中字段id            </td>
+        </tr>
+                            <tr>
+            <td colspan="6">
+                设置索引，
+                字段：quyu ，
+                关联表【quyu】中的id 字段            </td>
+        </tr>
+                            <tr>
+            <td colspan="6">
+                设置索引，
+                字段：gerenxinxi ，
+                关联表【yonghu】中的id 字段            </td>
+        </tr>
+                </tbody>
+</table>
+<p>&nbsp;</p>
+
+
+</html>
